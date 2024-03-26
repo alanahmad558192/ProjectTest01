@@ -10,6 +10,6 @@ describe('my first test', () => {
 
         sut.a = true;
 
-        expect(sut.a).toBe(false);
+        expect(sut.a).toBe(true);
     })
 })
