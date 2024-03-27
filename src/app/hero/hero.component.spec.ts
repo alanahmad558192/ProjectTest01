@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HeroComponent } from './hero.component';
 import { Hero } from '../hero';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 //Shallow Test for HeroComponent
 fdescribe('HeroComponent', () => {
@@ -9,14 +10,15 @@ fdescribe('HeroComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [HeroComponent]
+            declarations: [HeroComponent],
+            schemas : [NO_ERRORS_SCHEMA],
         });
         fixture = TestBed.createComponent(HeroComponent);
     });
 
     it('should have the correct hero', () => {
         fixture.componentInstance.hero = {id: 1, name: 'SuperDude', strength: 3};
-        // fixture.detectChanges();
+        fixture.detectChanges();
 
         expect(fixture.componentInstance.hero.name).toEqual('SuperDude');
     });
