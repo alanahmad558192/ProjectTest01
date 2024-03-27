@@ -73,4 +73,22 @@ describe('HeroComponent', () => {
             expect(component.heroes).toContain(newHero);
         });
     });
+
+    describe('ngOnInit', () => {
+        it('should call getHeroes method of heroService', () => {
+            mockHeroService.getHeroes.and.returnValue(of(HEROES));
+
+            component.ngOnInit();
+
+            expect(mockHeroService.getHeroes).toHaveBeenCalled();
+        });
+
+        it('should get heroes from the service', () => {
+            mockHeroService.getHeroes.and.returnValue(of(HEROES));
+
+            component.ngOnInit();
+
+            expect(component.heroes).toEqual(HEROES);
+        });
+    });
 });
