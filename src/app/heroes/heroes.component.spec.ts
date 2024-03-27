@@ -2,6 +2,7 @@ import { of } from "rxjs";
 import { HeroComponent } from "../hero/hero.component"
 import { HeroesComponent } from "./heroes.component"
 import { COMPOSITION_BUFFER_MODE } from "@angular/forms";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
 describe('HeroComponent', () => {
     let component: HeroesComponent;

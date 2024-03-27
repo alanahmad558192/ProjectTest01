@@ -10,6 +10,7 @@ import { Hero } from "../hero";
 export class HeroComponent {
   @Input() hero: Hero;
   @Output() delete = new EventEmitter();
+    heroes: any;
 
   onDeleteClick($event): void {
     $event.stopPropagation();
